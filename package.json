@@ -1,7 +1,6 @@
 {
   "private": true,
   "scripts": {
-    "vercel-install": "./vercel-submodule.sh && yarn install",
     "build": "next build",
     "dev": "next dev",
     "prettier": "prettier --write --ignore-unknown .",
