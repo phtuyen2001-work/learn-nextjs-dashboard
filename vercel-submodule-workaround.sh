@@ -3,7 +3,6 @@
 set -Eeuo pipefail
 
 GITMODULES=".gitmodules"
-FEXT=".bak"
 GITMODULES_BACKUP="${GITMODULES}${FEXT}"
 
 function cleanup {
@@ -22,7 +21,7 @@ function submodule_workaround {
   fi
 
   echo "Monkey patching..."
-  sed -i"$FEXT" -E "s/git@github.com:/https:\/\/${GITHUB_REPO_CLONE_TOKEN}@github.com\//" "$GITMODULES"
+  sed -i -E "s/git@github.com:/https:\/\/${GITHUB_REPO_CLONE_TOKEN}@github.com\//" "$GITMODULES"
   echo "Done!"
 
   echo "Synchronising submodules' remote URL configuration..."
@@ -30,7 +29,6 @@ function submodule_workaround {
   echo "Done!"
 
   echo "Updating the registered submodules to match what the superproject expects..."
-  git submodule sync --recursive
   git submodule update --init --recursive
   echo "Done!"
 }
