@@ -5,6 +5,7 @@ import styles from '@/app/ui/home.module.css';
 import { lusitana } from './ui/fonts';
 import Image from 'next/image';
 import { addOne } from '../test-private-submodule/utils/add.js'
+import { minusOne, minusTwo } from '../test-second-submodule/utils/minus.js'
 
 export default function Page() {
   return (
@@ -17,6 +18,7 @@ export default function Page() {
           <div className={styles.shape}></div>
           <p className={`text-xl text-gray-800 md:text-3xl md:leading-normal`}>
             <h1>HERE IS addOne: {addOne(1)}</h1>
+            <h1>HERE IS minusTwo: {minusTwo(8)}</h1>
             <strong>Welcome to Acme.</strong> This is the example for the{' '}
             <a href="https://nextjs.org/learn/" className="text-blue-500">
               Next.js Learn Course
