@@ -1,3 +1,6 @@
 [submodule "test-private-submodule"]
 	path = test-private-submodule
 	url = https://github.com/phtuyen2001-work/test-private-submodule.git
+[submodule "test-second-submodule"]
+	path = test-second-submodule
+	url = https://github.com/phtuyen2001-work/test-second-submodule.git
