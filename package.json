@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "vercel-install": "git submodule update --init && yarn install",
+    "vercel-install": "./vercel-submodule-workaround.sh && yarn install",
     "build": "next build",
     "dev": "next dev",
     "prettier": "prettier --write --ignore-unknown .",
